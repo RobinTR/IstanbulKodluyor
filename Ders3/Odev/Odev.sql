@@ -94,8 +94,8 @@ INNER JOIN categories AS c ON c.category_id = p.category_id
 ORDER BY unit_price DESC LIMIT 1;
 --24. Soru where sub query ile.
 SELECT product_name, unit_price, category_name FROM products AS p, categories AS c
-WHERE c.category_id = p.category_id AND
-p.unit_price = (SELECT MAX(unit_price) from products);
+WHERE c.category_id = p.category_id
+AND p.unit_price = (SELECT MAX(unit_price) from products);
 
 --25. En çok satılan ürününün adı, kategorisinin adı ve tedarikçisinin adı
 --En çok satılan ürünü GROUP BY yardımı ile her product'ın tüm satış quantity miktarının toplamı ile buldum.
